@@ -5,29 +5,26 @@ env:
   - USER="icasimpan"
   - EMAIL="deploy@travis-ci.com"
   - DEPLOYMENT_USER="traviscibot"
-  - REPO="quicktasks-pantheon"
+  - REPO="quicktasks-drupal"
   - BUILD_DIR="public"
   - GH_REPO="github.com/${USER}/${REPO}.git"
-  - HUGO_INSTALLER_URL="https://github.com/gohugoio/hugo/releases/download/v0.49.2/hugo_0.49.2_Linux-64bit.deb"
-  - GH_PUBLISH_BRANCH='gh-pages'
 
 ## Force commit to 'gh-pages' the built hugo site
 after_success:
-  - if [ -z $GITHUB_TOKEN ]; then echo "GITHUB_TOKEN var undefined, aborting."; exit 1; fi
-  - MESSAGE='Auto-built and commit via Travis CI.'
+  - MESSAGE='Commit with Travis CI'
   - ls -l
-  - mv ${BUILD_DIR} ~/ || exit 1
-  - cd ~/${BUILD_DIR}
+  - mv public ~/ || exit 1
+  - cd ~/public
   - git init
   - git add .
   - git config user.email ${EMAIL}
   - git config user.name ${DEPLOYMENT_USER}
   - git commit -m "${MESSAGE}"
-  - git checkout -b ${GH_PUBLISH_BRANCH}
-  - git push "https://${GITHUB_TOKEN}@${GH_REPO}" ${GH_PUBLISH_BRANCH} -f
+  - git checkout -b gh-pages
+  - git push "https://${GITHUB_TOKEN}@${GH_REPO}" gh-pages -f
 
 install:
-    - wget ${HUGO_INSTALLER_URL}
+    - wget https://github.com/gohugoio/hugo/releases/download/v0.65.2/hugo_0.65.2_Linux-64bit.deb
     - sudo dpkg -i hugo*.deb
     - pip install Pygments
 
