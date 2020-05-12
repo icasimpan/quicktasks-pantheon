@@ -1,7 +1,7 @@
 baseURL: https://ismael.casimpan.com/quicktasks-pantheon
 languageCode: en-us
 defaultContentLanguage: en
-title: Pantheon.io | IT Quicktasks
+title: Pantheon | IT Quicktasks
 theme: cupper-hugo-theme
 #googleAnalytics: UA-123456789-1
 #disqusShortname: yourdiscussshortname
@@ -17,7 +17,7 @@ imaging:
   quality: 99
 
 params:
-  description: "IT Quicktasks: Pantheon.io"
+  description: "IT Quicktasks: Pantheon"
   homeMetaContent: rsync
   footer: Made with [Hugo](https://gohugo.io/). Themed by [Cupper](https://github.com/zwbetz-gh/cupper-hugo-theme).
   # For more date formats see https://gohugo.io/functions/format/
