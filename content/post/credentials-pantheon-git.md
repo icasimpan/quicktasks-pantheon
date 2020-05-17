@@ -1,7 +1,6 @@
 ---
 title: "Credentials to Pantheon.io git"
 date: 2018-04-08T23:17:11+08:00
-tags: [pantheon]
 tags: [pantheon.io, hosting, git, login, google, sso]
 draft: false
 ---
